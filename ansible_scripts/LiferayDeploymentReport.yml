@@ -18,7 +18,7 @@
     file: path={{baseDir}}/lifeary.txt state=touch
     when: not(fileCreate|skipped)
     become: yes
-    become_user: {{ deploy_user }}
+    become_user: oracle
     register: resCmd
 
   - name: print lifeary cretaed file
