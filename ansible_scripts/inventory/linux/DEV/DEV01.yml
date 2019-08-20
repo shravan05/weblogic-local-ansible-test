@@ -6,7 +6,6 @@ Dev01LiferayAServer            ansible_ssh_host=165.22.45.221
 Dev01LiferayAServer
 
 [DEV01:vars]
-ansible_connection=paramiko
 deploy_user=oracle
 mi_user=sdasari
 baseDir=/u01/app/oracle
