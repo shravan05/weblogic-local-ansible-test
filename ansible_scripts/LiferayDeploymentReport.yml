@@ -4,7 +4,7 @@
 #Usage: ansible-playbook -i inventory SellingDeploymentReport.yml -l DEV
 ##Anudeep Seri - 04/03/2018
 
-- hosts: portal
+- hosts: Liferay
   remote_user: '{{ mi_user }}'
 
   tasks:
