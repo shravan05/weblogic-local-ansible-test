@@ -1,0 +1,27 @@
+---
+# Ansible script to search and replace JDBC ID's on target servers.
+#Usage: ansible-playbook -i inventory SellingDeploymentReport.yml -l <envType>
+#Usage: ansible-playbook -i inventory SellingDeploymentReport.yml -l DEV
+##Anudeep Seri - 04/03/2018
+
+- hosts: portal
+  remote_user: '{{ mi_user }}'
+
+  tasks:
+
+  - name: create output file
+    file: path={{workspace}}/results.txt state=touch
+    register: fileCreate
+    delegate_to: localhost
+
+  - name: Creating file using oracle user
+    file: path={{baseDir}}/lifeary.txt state=touch
+    when: not(fileCreate|skipped)
+    become: yes
+    become_user: {{ deploy_user }}
+    register: resCmd
+
+  - name: print lifeary cretaed file
+    shell: ls -lrt "{{baseDir}}/lifeary.txt" >> {{workspace}}/results.txt
+    when: not(resCmd|skipped)
+    delegate_to: localhost
