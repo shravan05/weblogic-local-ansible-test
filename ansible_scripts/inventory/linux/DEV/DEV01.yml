@@ -1,6 +1,6 @@
 [DEV01]
 #Lifeary
-Dev01LiferayAServer   ansible_ssh_host=165.22.45.221   ansible_connection=ssh ansible_user=sdasari
+Dev01LiferayAServer   ansible_ssh_host=165.22.45.221   ansible_connection=ssh   ansible_user=sdasari
 
 [Liferay]
 Dev01LiferayAServer
