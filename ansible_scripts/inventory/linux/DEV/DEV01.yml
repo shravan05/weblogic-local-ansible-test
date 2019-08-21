@@ -11,4 +11,4 @@ mi_user=sdasari
 baseDir=/u01/app/oracle
 ansible_become_user=oracle
 ansible_become_method=sudo
-ansible_become_pass='{{ sdasari_sudo_password }}'
+ansible_become_pass= "{{ vault_sdasari_sudo_password }}"
