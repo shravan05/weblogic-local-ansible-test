@@ -23,7 +23,7 @@
     vars_files:
       - passwd.yml
     vars:
-      ansible_become_pass: "{{ sdasari_sudo_pass }}"
+      ansible_become_pass: "{{ sdasari_sudo_password }}"
     register: resCmd
 
   - name: print lifeary cretaed file
