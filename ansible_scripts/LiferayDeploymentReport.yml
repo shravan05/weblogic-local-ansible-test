@@ -19,7 +19,7 @@
     when: not(fileCreate|skipped)
     become: yes
     become_user: oracle
-    become_method: so
+    become_method: sudo
     vars_files:
       - passwd.yml
     vars:
