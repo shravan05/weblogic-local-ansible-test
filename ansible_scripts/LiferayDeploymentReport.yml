@@ -19,7 +19,7 @@
     when: not(fileCreate|skipped)
     become: yes
     become_user: oracle
-    become_pass=Dev0p$@123
+    become_pass: Dev0p$@123
     register: resCmd
 
   - name: print lifeary cretaed file
