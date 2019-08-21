@@ -7,6 +7,9 @@
 - hosts: Liferay
   remote_user: '{{ mi_user }}'
 
+  vars_files:
+    - /home/ansible/passwd.yml
+
   tasks:
 
   - name: create output file
@@ -20,10 +23,6 @@
     become: yes
     become_user: oracle
     become_method: sudo
-    vars_files:
-      - passwd.yml
-    vars:
-      ansible_become_pass: "{{ sdasari_sudo_password }}"
     register: resCmd
 
   - name: print lifeary cretaed file
