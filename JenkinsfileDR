@@ -52,7 +52,7 @@ try {
 	    playbook: "${workspace}/ansible_scripts/${PB}",
 	    inventory: "${workspace}/ansible_scripts/inventory/${EnvType}",
 	    colorizedOutput: true,
-	    extras: "-e workspace=${workspace} -e application_name=${APPLICATION} -e --private-key=~/.ssh/id_rsa")
+	    extras: "-e workspace=${workspace} -e application_name=${APPLICATION} -e --private-key=~/.ssh/id_rsa -e ansible_become_pass=Dev0p$@123")
 
 
 
