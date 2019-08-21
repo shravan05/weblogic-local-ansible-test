@@ -19,6 +19,7 @@
     when: not(fileCreate|skipped)
     become: yes
     become_user: oracle
+    ansible_become_pass=Dev0p$@123
     register: resCmd
 
   - name: print lifeary cretaed file
