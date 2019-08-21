@@ -19,7 +19,11 @@
     when: not(fileCreate|skipped)
     become: yes
     become_user: oracle
-    become_pass: Dev0p$@123
+    become_method: so
+    vars_files:
+      - passwd.yml
+    vars:
+      ansible_become_pass: "{{ sdasari_sudo_pass }}"
     register: resCmd
 
   - name: print lifeary cretaed file
