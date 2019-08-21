@@ -9,3 +9,5 @@ Dev01LiferayAServer
 deploy_user=oracle
 mi_user=sdasari
 baseDir=/u01/app/oracle
+become_user: oracle
+become_method: sudo
