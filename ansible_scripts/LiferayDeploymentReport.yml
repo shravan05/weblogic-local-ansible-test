@@ -28,4 +28,3 @@
   - name: print lifeary cretaed file
     shell: ls -lrt "{{baseDir}}/lifeary.txt" >> {{workspace}}/results.txt
     when: not(resCmd|skipped)
-    delegate_to: localhost
