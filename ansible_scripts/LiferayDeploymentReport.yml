@@ -25,6 +25,12 @@
     become_method: sudo
     register: resCmd
 
-  - name: print lifeary cretaed file
-    shell: ls -lrt "{{baseDir}}/lifeary.txt" >> {{workspace}}/results.txt
+  - name: list lifeary cretaed file
+    shell: ls -lrt "{{baseDir}}/lifeary.txt"
     when: not(resCmd|skipped)
+    register: resOut
+
+  - name: print created log file result
+    shell: echo "Created file info with Timestamp - {{resOut.stdout}}" >> {{workspace}}/results.txt
+    when: not(resOut|skipped)
+    delegate_to: localhost  
