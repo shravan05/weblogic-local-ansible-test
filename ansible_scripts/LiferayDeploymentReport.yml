@@ -8,7 +8,7 @@
   remote_user: '{{ mi_user }}'
 
   vars_files:
-    - /home/ansible/passwd.yml
+    - ./vars/passwd.yml
 
   tasks:
 
