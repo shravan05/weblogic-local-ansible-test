@@ -30,9 +30,9 @@
 
   - name: list lifeary cretaed file
     shell: ls -lrt "{{baseDir}}/lifeary.txt"
-    when: not(resCmd|skipped)
     delegate_to: "{{ item }}"
     with_items: "{{ groups['Node2'] }}"
+    when: not(resCmd|skipped)
     register: resOut
     
 
