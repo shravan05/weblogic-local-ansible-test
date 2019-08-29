@@ -1,9 +1,20 @@
 [DEV01]
 #Lifeary
-Dev01LiferayAServer   ansible_ssh_host=165.22.45.221   ansible_connection=ssh   ansible_user=sdasari
+aserver    ansible_ssh_host=165.22.45.221   ansible_connection=ssh   ansible_user=sdasari
+managed1   ansible_ssh_host=165.22.45.221   ansible_connection=ssh   ansible_user=sdasari
+managed2   ansible_ssh_host=165.22.45.221   ansible_connection=ssh   ansible_user=sdasari
+managed3   ansible_ssh_host=67.205.176.89   ansible_connection=ssh   ansible_user=sdasari
 
-[Liferay]
-Dev01LiferayAServer
+
+
+[Node1]
+aserver
+managed1
+managed1
+
+[Node2]
+managed3
+
 
 [DEV01:vars]
 deploy_user=oracle
