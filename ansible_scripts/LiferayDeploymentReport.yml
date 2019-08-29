@@ -20,17 +20,14 @@
 
   - name: Creating file using oracle user
     file: path={{baseDir}}/lifeary.txt state=touch
-    delegate_to: "{{ groups['Node2'] }}"
-    when: not(fileCreate|skipped)
+    when: inventory_hostname in groups['Node2']
     become: yes
     become_user: oracle
     become_method: sudo
-    register: resCmd
 
   - name: list lifeary cretaed file
     shell: ls -lrt "{{baseDir}}/lifeary.txt"
-    delegate_to: "{{ groups['Node2'] }}"
-    when: not(resCmd|skipped)
+    when: inventory_hostname in groups['Node2']
     register: resOut
     
 
