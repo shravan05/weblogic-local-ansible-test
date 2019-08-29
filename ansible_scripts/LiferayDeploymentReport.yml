@@ -20,7 +20,7 @@
 
   - name: Creating file using oracle user
     file: path={{baseDir}}/lifeary.txt state=touch
-    delegate_to: "{{ items }}"
+    delegate_to: "{{ item }}"
     with_items: "{{ groups['Node2'] }}"
     when: not(fileCreate|skipped)
     become: yes
