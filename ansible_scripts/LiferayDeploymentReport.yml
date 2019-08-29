@@ -4,7 +4,7 @@
 #Usage: ansible-playbook -i inventory LiferayDeploymentReport.yml -l DEV
 ## power devops -
 
-- hosts: Liferay
+- hosts: all
   remote_user: '{{ mi_user }}'
 
   vars_files:
@@ -23,6 +23,8 @@
     become: yes
     become_user: oracle
     become_method: sudo
+    delegate_to: "{{ items }}"
+    with_items: "{{ groups.Node2 }}"
     register: resCmd
 
   - name: list lifeary cretaed file
