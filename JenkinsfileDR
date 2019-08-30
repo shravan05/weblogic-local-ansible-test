@@ -52,8 +52,8 @@ try {
       	ansiblePlaybook(
       	    playbook: "${workspace}/ansible_scripts/${PB}",
       	    inventory: "${workspace}/ansible_scripts/inventory/${EnvType}",
-      	    colorized: true,
-      	    extras: "-e workspace=${workspace} -e application_name=${APPLICATION} -e --private-key=~/.ssh/id_rsa")
+      	    colorizedOutput: true,
+      	    extras: "-e workspace=${workspace} -e application_name=${APPLICATION}")
     }
 
 
