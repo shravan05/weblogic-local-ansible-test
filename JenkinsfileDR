@@ -52,7 +52,7 @@ try {
       	ansiblePlaybook(
       	    playbook: "${workspace}/ansible_scripts/${PB}",
       	    inventory: "${workspace}/ansible_scripts/inventory/${EnvType}",
-      	    colorizedOutput: true,
+      	    colorized: true,
       	    extras: "-e workspace=${workspace} -e application_name=${APPLICATION}")
     }
 
