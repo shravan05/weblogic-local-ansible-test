@@ -18,7 +18,7 @@
   - name: Deployment facts
     debug: msg="list of files are {{ item }}"
     with_items:
-      - "{{ file_contents }}"
+      - "{{ item.file_contents }}"
     run_once: true
 
   - name: create output file
