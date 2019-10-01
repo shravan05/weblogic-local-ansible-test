@@ -19,6 +19,7 @@
     debug: msg="list of files are {{ item }}"
     with_items:
       - "{{ file_contents }}"
+    run_once: true
 
   - name: create output file
     file: path={{workspace}}/results.txt state=touch
@@ -28,14 +29,14 @@
 
   - name: Creating file using oracle user
     file: path={{baseDir}}/lifeary.txt state=touch
-    when: inventory_hostname in groups['Node2']
+    when: inventory_hostname in groups['Node1']
     become: yes
     become_user: oracle
     become_method: sudo
 
   - name: list lifeary cretaed file
     shell: ls -lrt "{{baseDir}}/lifeary.txt"
-    when: inventory_hostname in groups['Node2']
+    when: inventory_hostname in groups['Node1']
     register: resOut
 
 
