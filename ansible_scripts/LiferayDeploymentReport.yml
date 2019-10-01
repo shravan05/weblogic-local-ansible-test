@@ -23,7 +23,7 @@
 
   - name: Create contents directories if it does not exist
     file:
-      path: {{baseDir}}/{{ item }}
+      path: "{{baseDir}}/{{ item }}"
       state: directory
     with_items:
       - "{{ file_contents }}"
