@@ -31,6 +31,7 @@
     become: yes
     become_user: oracle
     become_method: sudo
+    run_once: true
 
   - name: create output file
     file: path={{workspace}}/results.txt state=touch
