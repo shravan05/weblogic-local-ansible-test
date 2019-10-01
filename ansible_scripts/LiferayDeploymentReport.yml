@@ -18,8 +18,19 @@
   - name: Deployment facts
     debug: msg="list of files are {{ item }}"
     with_items:
-      - "{{ item.file_contents }}"
+      - "{{ file_contents }}"
     run_once: true
+
+  - name: Create contents directories if it does not exist
+    file:
+      path: {{baseDir}}/{{ item }}
+      state: directory
+    with_items:
+      - "{{ file_contents }}"
+    when: inventory_hostname in groups['Node1']
+    become: yes
+    become_user: oracle
+    become_method: sudo
 
   - name: create output file
     file: path={{workspace}}/results.txt state=touch
